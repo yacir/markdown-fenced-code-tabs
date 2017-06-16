@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='markdown-fenced-code-tabs',
-    version='0.1.0',
+    version='0.2.0',
     url='https://github.com/yacir/markdown-fenced-code-tabs',
     py_modules=['markdown_fenced_code_tabs'],
     install_requires = ['markdown>=2.6'],

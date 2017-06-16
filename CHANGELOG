@@ -1,3 +1,9 @@
+## 0.2.0 (2017-06-16)
+
+  * Added the custom tab label option
+  * Fixed the missing `active` class of the first tab
+  * Fixed the missing `string` import
+
 ## 0.1.0 (2017-03-01)
 
   * Initial release
