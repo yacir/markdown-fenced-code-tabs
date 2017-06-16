@@ -34,6 +34,7 @@ import string
 # Ordered so that 'data-' attrs of html are in deterministic order.
 PARAM_REGEXES = odict((
     ('hl_lines', re.compile(r'''hl_lines=(?P<quot>"|')(?P<hl_lines>.*?)(?P=quot)''')),
+    ('fct_label', re.compile(r'''fct_label=(?P<quot>"|')(?P<fct_label>.*?)(?P=quot)''')),
 ))
 
 
@@ -45,6 +46,8 @@ class FencedCodeTabsPreprocessor(Preprocessor):
         (\{?\.?(?P<lang>[\w#.+-]*))?[ ]*        # Optional {, and lang
         # Optional highlight lines, single- or double-quote-delimited
         (hl_lines=(?P<quot>"|')(?P<hl_lines>.*?)(?P=quot))?[ ]*
+        # Optional tab label, single- or double-quote-delimited
+        (fct_label=(?P<fct_quot>"|')(?P<fct_label>.*?)(?P=fct_quot))?[ ]*
         }?[ ]*\n                                # Optional closing }
         (?P<code>.*?)(?<=\n)
         (?P=fence)[ ]*$''', re.MULTILINE | re.DOTALL | re.VERBOSE)
@@ -126,9 +129,14 @@ class FencedCodeTabsPreprocessor(Preprocessor):
                             raise Exception("{} needs an argument within \n{}".format(param, first_line))
 
                 lang = ''
+                label = ''
 
                 if m.group('lang') and m.group('lang') not in PARAM_REGEXES:
                     lang = m.group('lang')
+                    label = lang[0:1].capitalize() + lang[1:]
+
+                if kwargs.get('fct_label'):
+                    label =  kwargs.get('fct_label')
 
                 if self.codehilite_conf:
                     highliter = CodeHilite(
@@ -147,7 +155,7 @@ class FencedCodeTabsPreprocessor(Preprocessor):
                     code = self.TAB_ITEM_BODY_WRAP_ESCAPE % (lang,
                                                              self._escape(m.group('code')))
 
-                self.tab_items.append(FencedCodeTabs(lang, lang, code))
+                self.tab_items.append(FencedCodeTabs(label, lang, code))
 
                 placeholder = self.tab_item_placeholder.format(len(self.tab_items) - 1)
 
@@ -247,7 +255,7 @@ class FencedCodeTabsSet(object):
     """
     TAB_SET_HANDLE_TEMPLATE = """
         <li class="nav-item {isTabActiveClass}">
-            <a href="#{id}" aria-controls="{id}" role="tab" data-toggle="tab" data-lang="{lang}">{ulang}</a>
+            <a href="#{id}" aria-controls="{id}" role="tab" data-toggle="tab" data-lang="{lang}">{label}</a>
         </li>
     """
     TAB_SET_TAB_CONTAINER_TEMPLATE = """
@@ -297,11 +305,12 @@ class FencedCodeTabsSet(object):
 
             tab_set_id = self._get_tab_id(tab)
             lang = tab.get_lang()
+            label = tab.get_label()
 
             tab_handles += self.TAB_SET_HANDLE_TEMPLATE.format(id=tab_set_id,
                                                                isTabActiveClass=tab_active_class,
                                                                lang=lang,
-                                                               ulang=lang[0:1].capitalize() + lang[1:])
+                                                               label=label)
 
             tabs += self.TAB_BODY_CONTAINER_TEMPLATE.format(id=tab_set_id,
                                                             isTabActiveClass=tab_active_class,
@@ -325,8 +334,8 @@ class FencedCodeTabsSet(object):
 # Fenced Code Nav Item
 class FencedCodeTabs(object):
 
-    def __init__(self, name, lang, body):
-        self.name = name
+    def __init__(self, label, lang, body):
+        self.label = label
         self.lang = lang
         self.tabBody = body
 
@@ -335,6 +344,9 @@ class FencedCodeTabs(object):
 
     def get_lang(self):
         return self.lang
+
+    def get_label(self):
+        return self.label
 
     def __repr__(self):
         return self.__str__()
