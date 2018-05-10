@@ -1,25 +1,36 @@
-from setuptools import setup, find_packages
+
+from setuptools import setup
 
 setup(
     name='markdown-fenced-code-tabs',
-    version='0.2.0',
-    url='https://github.com/yacir/markdown-fenced-code-tabs',
-    py_modules=['markdown_fenced_code_tabs'],
-    install_requires = ['markdown>=2.6'],
-    description='Generates Bootstrap HTML Tabs for Consecutive Fenced Code Blocks',
+    version='1.0.0',
+    project_urls={
+        'Bug Reports': 'https://github.com/yacir/markdown-fenced-code-tabs/issues',
+        'Say Thanks!': 'http://saythanks.io/to/yacir',
+        'Source': 'https://github.com/yacir/markdown-fenced-code-tabs',
+    },
+    packages=['markdown_fenced_code_tabs'],
+    install_requires=[
+        'markdown>=2.6',
+        'htmlmin>=0.1.12',
+        'Jinja2>=2.7.1'
+    ],
+    include_package_data=True,
+    description='Generates a html estructure for consecutive fenced code blocks content',
     author='Yassir Barchi',
-    author_email='yassirbarchi@gmail.com',
+    author_email='github@yassir.fr',
     license='MIT',
-    keywords = ['fenced code blocks', 'code', 'tabs', 'markdown', 'mkdocs'],
-    platforms='Operating System :: OS Independent',
-    long_description="""This extension will convert consecutive fences blocks and convert it to HTML Bootstrap Tabs.""",
+    keywords=['fenced code blocks', 'code', 'fenced', 'tabs', 'mkdocs', 'markdown'],
+    long_description=""" Markdown extension who generates HTML tabs for consecutive fenced code blocks in markdown syntax """,
+    zip_safe=False,
     classifiers=[
-        'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 3',
-        'Topic :: Text Processing'
+        'Intended Audience :: Developers',
+        'Topic :: Software Development :: Libraries :: Python Modules',
+        'Topic :: Software Development :: Libraries :: Text Processing'
     ]
 )
