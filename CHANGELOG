@@ -1,3 +1,8 @@
+## 1.0.0 (2018-05-xx)
+  * **NEW**: Added the `active_class` option support in the configuration
+  * **NEW**: Added the `template` option support in the configuration
+  * **FIX**: Fixed the tab id issue for code blocks with same language #12
+
 ## 0.2.0 (2017-06-16)
 
   * Added the custom tab label option
