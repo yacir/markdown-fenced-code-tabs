@@ -1,0 +1,31 @@
+{% extends "base-template.html" %}
+
+{% macro code_tabs(headers, contents, active_class) -%}
+<div class="md-fenced-code-tabs code-tab-group">
+    <ul class="nav nav-tabs">
+        {% for header in headers %}
+        <li class="nav-item">	
+            <a class="nav-link {{ active_class if loop.first else '' }}" 
+               href="#{{ header.id }}-panel" 
+               role="tab" 
+               id="{{ header.id }}-tab" 
+               data-toggle="tab" 
+               data-lang="{{ header.lang }}"
+               aria-controls="{{ header.id }}-panel" 
+               aria-selected="{{ loop.first|lower }}">{{ header.title|title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <div class="tab-content">
+        {% for content in contents %}
+        <div id="{{ content.id }}-panel" 
+             class="tab-pane {{ 'show ' + active_class if loop.first else '' }}" 
+             role="tabpanel" 
+             aria-labelledby="{{ content.id }}-tab">
+            {{ content.code }}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{%- endmacro %}
