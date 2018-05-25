@@ -1,4 +1,4 @@
-## 1.0.0 (2018-05-xx)
+## 1.0.0 (2018-05-25)
   * **NEW**: Added the `active_class` option support in the configuration
   * **NEW**: Added the `template` option support in the configuration
   * **FIX**: Fixed the tab id issue for code blocks with same language #12
