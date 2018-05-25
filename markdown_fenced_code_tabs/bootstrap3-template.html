@@ -1,0 +1,24 @@
+{% extends "base-template.html" %}
+
+{% macro code_tabs(headers, contents, active_class) -%}
+<ul class="nav nav-tabs">
+    {% for header in headers %}
+    <li class="nav-item {{ active_class if loop.first else '' }}">	
+        <a href="#{{ header.id }}" 
+           role="tab" 
+           data-toggle="tab" 
+           data-lang="{{ header.lang }}">{{ header.title|title }}</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<div class="tab-content">
+    {% for content in contents %}
+    <div id="{{ content.id }}" 
+         class="tab-pane {{ active_class if loop.first else '' }}" 
+         role="tabpanel">
+        {{ content.code }}
+    </div>
+    {% endfor %}
+</div>
+{%- endmacro %}

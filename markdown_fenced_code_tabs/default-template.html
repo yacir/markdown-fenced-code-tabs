@@ -1,0 +1,26 @@
+{% extends "base-template.html" %}
+
+{% macro code_tabs(headers, contents, active_class, group_id) -%}
+{% for header in headers %}
+<input name="{{ group_id }}" 
+       type="radio" 
+       id="{{ header.id }}" 
+       {{ 'checked="checked"' if loop.first else '' }}
+       class="code-tab"
+       data-lang="{{ header.lang }}"
+       aria-controls="{{ contents[loop.index0].id }}-panel"
+       role="tab"/>
+
+<label for="{{ header.id }}" 
+       class="code-tab-label" 
+       data-lang="{{ header.lang }}"
+       id="{{ header.id }}-label">{{ header.title|title }}</label>
+       
+<div class="code-tabpanel" 
+     role="tabpanel" 
+     data-lang="{{ header.lang }}"
+     id="{{ contents[loop.index0].id }}-panel"
+     aria-labelledby="{{ header.id }}-label">{{ contents[loop.index0].code }}
+</div>
+{% endfor %}
+{%- endmacro %}
