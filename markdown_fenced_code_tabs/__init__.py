@@ -8,7 +8,7 @@ This extension generates Bootstrap HTML Tabs for consecutive fenced code blocks
 
 See <https://github.com/yacir/markdown-fenced-code-tabs> for documentation.
 
-Copyright (c) 2017 [Yassir Barchi](https://github.com/yacir).
+Copyright © 2017-present [Yassir Barchi](https://github.com/yacir).
 
 License: [MIT](https://opensource.org/licenses/MIT)
 """
@@ -23,6 +23,7 @@ from markdown.extensions.codehilite import parse_hl_lines
 
 import re
 import os
+import sys
 from time import time
 from collections import deque
 from collections import OrderedDict as odict
@@ -175,7 +176,11 @@ class CodeTabsPreprocessor(Preprocessor):
             contents=group.get_contents(),
             group_id=group.get_id()
         )
-        return minify(group_html.decode("utf-8"), remove_empty_space=True, remove_comments=True)
+
+        if (sys.version_info > (3, 0)):
+            return minify(group_html, remove_empty_space=True, remove_comments=True)
+        else:
+            return minify(group_html.decode("utf-8"), remove_empty_space=True, remove_comments=True)
 
     def _highlite_code(self, lang, code, options):
         if self.codehilite_config:
