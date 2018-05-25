@@ -1,0 +1,6 @@
+recursive-include markdown_fenced_code_tabs *.html
+
+include LICENSE
+include CODE_OF_CONDUCT.md
+include CONTRIBUTING.md
+include CHANGELOG
