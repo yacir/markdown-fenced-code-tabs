@@ -4,6 +4,7 @@ from setuptools import setup
 setup(
     name='markdown-fenced-code-tabs',
     version='1.0.0',
+    url='https://github.com/yacir/markdown-fenced-code-tabs',
     project_urls={
         'Bug Reports': 'https://github.com/yacir/markdown-fenced-code-tabs/issues',
         'Say Thanks!': 'http://saythanks.io/to/yacir',
@@ -30,7 +31,7 @@ setup(
         'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 3',
         'Intended Audience :: Developers',
-        'Topic :: Software Development :: Libraries :: Python Modules',
-        'Topic :: Software Development :: Libraries :: Text Processing'
+        'Topic :: Software Development :: Libraries',
+        'Topic :: Text Processing'
     ]
 )
