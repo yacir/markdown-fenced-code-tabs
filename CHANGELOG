@@ -1,5 +1,5 @@
 ## 1.0.3 (2018-05-27)
-  * Avoid adding the `<div class="md-fenced-code-tabs"></div> structure for single code blocks if the `single_block_as_tab` option is `True`.
+  * Avoid adding the `<div class="md-fenced-code-tabs"></div>` structure for single code blocks if the `single_block_as_tab` option is `True`.
 
 ## 1.0.2 (2018-05-27)
   * **FIX**: Fixed the Bootsrap templates
