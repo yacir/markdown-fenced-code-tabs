@@ -1,13 +1,15 @@
-<div class="md-fenced-code-tabs" id="tab-{{ group_id }}">
 {% if headers|length > 1 %}
+<div class="md-fenced-code-tabs" id="tab-{{ group_id }}">
    {{ code_tabs(headers, contents, config.active_class, group_id) }}
+</div>
 {% else %}
     {% if config.single_block_as_tab %}
+<div class="md-fenced-code-tabs" id="tab-{{ group_id }}">
         {{ code_tabs(headers, contents, config.active_class, group_id) }}
+</div>
     {% else %}
         {% for content in contents %}
             {{ content.code }}
         {% endfor %}
     {% endif %}
 {% endif %}
-</div>
