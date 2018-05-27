@@ -8,7 +8,7 @@ This extension generates Bootstrap HTML Tabs for consecutive fenced code blocks
 
 See <https://github.com/yacir/markdown-fenced-code-tabs> for documentation.
 
-Copyright © 2017-present [Yassir Barchi](https://github.com/yacir).
+Copyright (c) 2017-present [Yassir Barchi](https://github.com/yacir).
 
 License: [MIT](https://opensource.org/licenses/MIT)
 """
@@ -210,8 +210,8 @@ class CodeTabsExtension(Extension):
         # Default config
         self.config = {
             'single_block_as_tab': [False, 'Render a single code block as a tab'],
-            'active_class': ['active', 'TODO'],
-            'template': ['default', 'TODO'],
+            'active_class': ['active', 'Class name is applied to the active tab'],
+            'template': ['default', 'A string that specifies which HTML template should be used default, bootstrap3, or bootstrap4'],
         }
 
         super(CodeTabsExtension, self).__init__(*args, **kwargs)

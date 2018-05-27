@@ -1,6 +1,6 @@
 {% extends "base-template.html" %}
 
-{% macro code_tabs(headers, contents, active_class) -%}
+{% macro code_tabs(headers, contents, active_class, group_id) -%}
 <ul class="nav nav-tabs">
     {% for header in headers %}
     <li class="nav-item">	
