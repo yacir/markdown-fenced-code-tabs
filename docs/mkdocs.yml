@@ -1,0 +1,51 @@
+site_name: MD Code Tabs Extension
+site_url: https://yacir.github.io/markdown-fenced-code-tabs
+repo_url: https://github.com/yacir/markdown-fenced-code-tabs
+edit_uri: tree/master/docs/src/
+site_description: Markdown extension who generates HTML tabs for consecutive fenced code blocks in markdown syntax
+copyright: |
+  Copyright &copy; 2017 - present <a href="https://github.com/yacir">Yassir Barchi</a>
+
+docs_dir: src
+theme:
+  name: material
+  language: en
+  palette:
+    primary: light-blue
+    accent: light-blue
+  logo:
+    icon: description
+  font:
+    text: 'Ubuntu'
+    code: 'Ubuntu Mono'
+  include_search_page: false
+  search_index_only: true
+
+pages:
+  - Getting Started: index.md
+  - Templates: templates.md
+  - Release Notes: release-notes.md
+  - Contributing & Support: contributing.md
+  - Licence: licence.md
+
+markdown_extensions:
+  - markdown.extensions.admonition
+  - markdown.extensions.codehilite:
+      guess_lang: false
+  - markdown.extensions.toc:
+      permalink: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.smartsymbols
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.details
+  - markdown_fenced_code_tabs
+
+extra_css:
+  - 'assets/css/code-tabs.css'

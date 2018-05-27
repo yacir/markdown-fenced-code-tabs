@@ -1,87 +1,26 @@
-[![PyPI][pypi-image]][pypi-link]
-
-  [pypi-image]: https://img.shields.io/pypi/v/markdown-fenced-code-tabs.svg
-  [pypi-link]: https://pypi.python.org/pypi/markdown-fenced-code-tabs
+<p align="center">
+    <a href="https://pypi.python.org/pypi/markdown-fenced-code-tabs">
+        <img src="https://img.shields.io/pypi/v/markdown-fenced-code-tabs.svg"/>
+    </a>
+    <img src="https://img.shields.io/pypi/pyversions/markdown-fenced-code-tabs.svg"/>
+    <img src="https://img.shields.io/pypi/l/markdown-fenced-code-tabs.svg"/>
+</p>
 
 # Markdown Code Tabs Extension
 
-Generates Bootstrap HTML Tabs for Consecutive Markdown Fenced Code Blocks
+**Code Tabs** is an extension that generates a HTML structure for consecutive fenced code blocks content.
 
-```md
-    ```http
-    GET / HTTP/1.1
-    User-Agent: MyClient/1.0.0
-    Accept: application/vnd.travis-ci.2+json
-    Host: api.travis-ci.org
+## Quick start
 
-    HTTP/1.1 200 OK
-    Content-Type: application/json
+Installation is easy with pip:
 
-    {"hello":"world"}
-    ```
-
-    ```shell
-    $ travis raw /
-    {"hello":"world"}
-    ```
-
-    ```ruby
-    require 'travis'
-
-    # You usually don't want to fire API requests manually
-    client = Travis::Client.new
-    client.get_raw('/') # => {"hello"=>"world"}
-
-    client.get('/repos/sinatra/sinatra')
-    # => {"repo"=>#<Travis::Client::Repository: sinatra/sinatra>}
-    ```
-```
-
-Becomes:
-
-![Generated result](docs/images/img1.png)
-
-To customize the tab label, add the `fct_label` option to your code block.
-
-```md
-    ```swift fct_label="Swift 2"
-    array.enumerate()
-    ```
-
-    ```swift fct_label="Swift 3"
-    array.enumerated()
-    ```
-```
-
-![Generated result](docs/images/img2.png)
-
-## Installation
-
-Install the latest version with `pip`:
-```sh
+``` sh
 pip install markdown-fenced-code-tabs
-```
+``` 
 
-## MkDocs Usage
+For detailed installation instructions and a demo, visit
+[the documentation](https://yacir.github.io/markdown-fenced-code-tabs/).
 
-```yml
-markdown_extensions:
-  - markdown_fenced_code_tabs:
-      single_block_as_tab: True
-```
-
-## Options
-
-### `single_block_as_tab`
-If `True`, the extension will render a single code block as a tab. Default is `False`.
-
-`single_block_as_tab: True` generates:
-
-![True single_block_as_tab](docs/images/img3.png)
-
-`single_block_as_tab: False` generates:
-
-![False single_block_as_tab](docs/images/img4.png)
 
 ## Author 
 [Yassir Barchi](http://yassir.fr)

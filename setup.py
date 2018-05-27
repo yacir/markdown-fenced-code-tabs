@@ -17,7 +17,7 @@ setup(
         'Jinja2>=2.7.1'
     ],
     include_package_data=True,
-    description='Generates a html estructure for consecutive fenced code blocks content',
+    description='Generates a html structure for consecutive fenced code blocks content',
     author='Yassir Barchi',
     author_email='github@yassir.fr',
     license='MIT',
