@@ -62,7 +62,7 @@ Here is the basic CSS that can be used.
 ```
 
 !!! tip
-    Take a look to the [code-tabs css](../assets/css/code-tabs.css) of this current documentation :wink:
+    Take a look to the [code-tabs css](assets/css/code-tabs.css) of this current documentation :wink:
 
 ### Generated HTML
 
