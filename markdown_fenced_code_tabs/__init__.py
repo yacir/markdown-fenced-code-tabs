@@ -149,7 +149,7 @@ class CodeTabsPreprocessor(Preprocessor):
                         tab_group.add_tab(self.items.popleft())
 
                     group_html = self._generate_group_html_code(tab_group)
-                    transformed_lines += '\n' + self.markdown.htmlStash.store(group_html, safe=True) + '\n\n'
+                    transformed_lines += '\n' + self.markdown.htmlStash.store(group_html) + '\n\n'
 
                     groups_count += 1
                     first_tab_index = None
@@ -165,7 +165,7 @@ class CodeTabsPreprocessor(Preprocessor):
                 tab_group.add_tab(self.items.popleft())
 
             group_html = self._generate_group_html_code(tab_group)
-            transformed_lines += '\n' + self.markdown.htmlStash.store(group_html, safe=True) + '\n\n'
+            transformed_lines += '\n' + self.markdown.htmlStash.store(group_html) + '\n\n'
 
         return transformed_lines
 
