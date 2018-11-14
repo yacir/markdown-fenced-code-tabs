@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name='markdown-fenced-code-tabs',
-    version='1.0.4',
+    version='1.0.5',
     url='https://github.com/yacir/markdown-fenced-code-tabs',
     project_urls={
         'Bug Reports': 'https://github.com/yacir/markdown-fenced-code-tabs/issues',
