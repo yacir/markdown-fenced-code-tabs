@@ -26,6 +26,9 @@ markdown_extensions:
 
 ## Changelog
 
+### 1.0.4 <small>_ Nov 14, 2018</small>
+  * **FIX**: Build failure due to [markdown 3+ package breaking change](https://python-markdown.github.io/change_log/release-3.0/#safe_mode-and-html_replacement_text-keywords-deprecated).
+
 ### 1.0.3 <small>_ May 27, 2018</small>
   * Avoid adding the `<div class="md-fenced-code-tabs"></div>` structure for single code blocks if the `single_block_as_tab` option is `True`.
 
