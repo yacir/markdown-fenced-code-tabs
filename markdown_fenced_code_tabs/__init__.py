@@ -104,7 +104,7 @@ class CodeTabsPreprocessor(Preprocessor):
 
                 if m.group('lang') and m.group('lang') not in PARAM_REGEXES:
                     tab_lang = m.group('lang')
-                    tab_title = tab_lang
+                    tab_title = tab_lang.title()
 
                 if kwargs.get('fct_label'):
                     tab_title = kwargs.get('fct_label')
