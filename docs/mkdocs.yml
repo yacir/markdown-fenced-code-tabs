@@ -21,7 +21,7 @@ theme:
   include_search_page: false
   search_index_only: true
 
-pages:
+nav:
   - Getting Started: index.md
   - Templates: templates.md
   - Release Notes: release-notes.md

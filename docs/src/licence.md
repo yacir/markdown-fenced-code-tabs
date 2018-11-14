@@ -1,6 +1,6 @@
 MIT License
 
-Copyright © 2017-present [Yassir Barchi](github@yassir.fr)
+Copyright © 2017-present [Yassir Barchi](mailto:github@yassir.fr)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
