@@ -1,3 +1,6 @@
+## 1.0.5 (2018-11-14)
+  * **FIX**: Custom label capitalization issue.
+
 ## 1.0.4 (2018-11-14)
   * **FIX**: Build failure due to [markdown 3+ package breaking change](https://python-markdown.github.io/change_log/release-3.0/#safe_mode-and-html_replacement_text-keywords-deprecated).
 

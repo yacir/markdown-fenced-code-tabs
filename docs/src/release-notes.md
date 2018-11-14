@@ -26,6 +26,9 @@ markdown_extensions:
 
 ## Changelog
 
+### 1.0.5 <small>_ Nov 14, 2018</small>
+  * **FIX**: Custom label capitalization issue.
+
 ### 1.0.4 <small>_ Nov 14, 2018</small>
   * **FIX**: Build failure due to [markdown 3+ package breaking change](https://python-markdown.github.io/change_log/release-3.0/#safe_mode-and-html_replacement_text-keywords-deprecated).
 
